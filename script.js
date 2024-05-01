@@ -3,6 +3,7 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+addEmployeesBtn.addEventListener('click', trackEmployeeData);
 // Collect employee data
 const collectEmployees = function() {
 //  const addEmployeesBtn = [];
