@@ -6,7 +6,7 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
 // Collect employee data
 const collectEmployees = function() {
-//  const addEmployeesBtn = [];
+//  const addEmployeesBtn = [];git 
 const employees = [];
   
 while (true) {
