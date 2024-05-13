@@ -7,11 +7,11 @@ Modify starter code to create an application that enables a payroll manager to v
 2. Contributions
 
 ## Deployed Page
+https://yaniquebro.github.io/employee-salary-organizer/
 
-
-Screenshot:<img width="1033" alt="Screenshot 2024-03-30 at 12 58 20 PM" src="https://github.com/yaniquebro/all-yani/assets/158354516/9e26a2d0-89cb-4164-85b9-862199cff99b">
+Screenshot:
+<img width="1470" alt="Screenshot 2024-05-13 at 8 38 18 AM" src="https://github.com/yaniquebro/employee-salary-organizer/assets/158354516/38e3c099-828d-4e75-b37b-7367aa78118a">
 
 
 ## Contributions 
-* 
-* Refactoring by Yanique Brooks
+
