@@ -44,6 +44,12 @@ const displayAverageSalary = function(employeesArray) {
 
 // Select a random employee
 
+const getRandomEmployee = function() {
+
+  let index = Math.floor(Math.random() * employees.length);
+  console.log("Random selected employee" + index)
+
+}
 /*
   ====================
   STARTER CODE
@@ -109,4 +115,3 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
-}
