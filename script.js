@@ -7,29 +7,40 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 let employees = [];
 
 const collectEmployees = function() {
-   let confirm = true
-while(toconfirm) {
-//user input/employee info
-  let firstName = prompt("Enter employee first name.");
-  let lastName = prompt("Enter employee last name.");
-  let salaryInput = prompt("Enter employee salary");
 
-  if(!isNaN(parseInt(salaryInput))){
-  let newEmployee = {firstName, lastName, salaryInput: parseInt(salaryInput)}
+   const newEmployee = {
+//user input/employee info
+  firstName: prompt("Enter employee first name."),
+  lastName: prompt("Enter employee last name."),
+  salary: parseFloat (prompt("Enter employee salary")),
+   };
   employees.push(newEmployee);
-  console.log(employees);
-  toconfirm = confirm("Add next employee")
-  console.log(toconfirm);}   
+  addAnotherEmployee();  
 }  
+function addAnotherEmployee() {
+  const addNew = confirm('add another')
+
+  if (addNew == true) {
+    collectEmployees();
+  } else {
+    displayEmployees(employees);
+  }
 
 return employees
 }
   
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  console.log("getting average")
-    
+  let sum = 0
+  for (i=0; i<employeesArray.length; i++) {
+    sum = sum + employeesArray[i].salary;
+  }
 
+  let salaryAvg = sum/employeesArray.length
+
+  console.log("The average employee salary is" + salaryAvg)
+
+}
 
 // Select a random employee
 
@@ -98,3 +109,4 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+}
