@@ -3,63 +3,35 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-addEmployeesBtn.addEventListener('click', trackEmployeeData);
 // Collect employee data
+let employees = [];
+
 const collectEmployees = function() {
- 
-const employees = [];
-  
-while (true) {
+   let confirm = true
+while(toconfirm) {
 //user input/employee info
-  let firstName = prompt("Enter first name.");
-  let lastName = prompt("Enter last name.");
-  let salaryInput = prompt("Enter Salary");
+  let firstName = prompt("Enter employee first name.");
+  let lastName = prompt("Enter employee last name.");
+  let salaryInput = prompt("Enter employee salary");
 
-  let salary = isNaN(Number(salaryInput)) ? 0 : Number(salaryInput);
+  if(!isNaN(parseInt(salaryInput))){
+  let newEmployee = {firstName, lastName, salaryInput: parseInt(salaryInput)}
+  employees.push(newEmployee);
+  console.log(employees);
+  toconfirm = confirm("Add next employee")
+  console.log(toconfirm);}   
+}  
 
-// creates the object
-employees.push({
-    firstName: firstName,
-    lastName: lastName,
-    salary: salary
-});   
-
-//to add another employee
-let addAnother = confirm("Add new employee");
-if (!addAnother) {
-    break; 
-}
-}
-
-return employees;
-
+return employees
 }
   
 // Display the average salary
-function displayAverageSalary(employees) {
-    let totalSalary = 0;
-    for (let employee of employees) {
-        totalSalary += employee.salary;
-    }
-
-    const averageSalary = totalSalary / employees.length;
-
-    console.log(`Average Salary: $${averageSalary.toFixed(2)} | Number of Employees: ${employees.length}`);
-
-}
+const displayAverageSalary = function(employeesArray) {
+  console.log("getting average")
+    
 
 
 // Select a random employee
-function getRandomEmployee(employees) {
-  // TODO: Select and display a random employee
-  const randomIndex = Math.floor(Math.random() * employees.length);
-
-  const randomEmployee = employees[randomIndex];
-
-  const fullName = `${randomEmployee.firstName} ${randomEmployee.lastName}`;
-
-  console.log(`Random Employee: ${fullName}`);
-}
 
 /*
   ====================
